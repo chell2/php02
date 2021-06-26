@@ -50,7 +50,7 @@
 		<div>
 			<a href="shinsei_input.php">入力画面</a> /
 			<a href="shinsei_read.php">申請一覧</a> /
-			<a href="image_read.php">受取写真</a> /
+			<a href="photo_read.php">受取写真</a> /
 			<a href="shinsei_map.php">農振図</a>
 		</div>
 	</header>
@@ -58,7 +58,7 @@
 		<div class="wrapIframe">
 			<iframe id="txtRead" title="txtRead" src="shinsei_read.php">
 			</iframe>
-			<iframe id="imageRead" title="imageRead" src="image_read.php">
+			<iframe id="imgRead" title="imgRead" src="photo_read.php">
 			</iframe>
 		</div>
 		<!-- <div class="wrapChartL">

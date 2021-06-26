@@ -21,7 +21,7 @@ function dbc()
 				PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
 			]
 		);
-		echo "成功!";
+		// echo "成功!";
 		return $pdo;
 	} catch (PDOException $e) {
 		exit($e->getMessage());
@@ -42,7 +42,7 @@ function fileSave($filename, $save_path, $caption)
 {
 	$result = False;
 
-	$sql = "INSERT INTO flood_damage_image_table(file_name, file_path,
+	$sql = "INSERT INTO flood_damage_photo_table(file_name, file_path,
 	caption) VALUE (?, ?, ?)";     // ???の中身は次のbind関数で設定
 	try {
 		$stmt = dbc()->prepare($sql);  // 準備
@@ -55,4 +55,24 @@ function fileSave($filename, $save_path, $caption)
 		echo $e->getMessage();         // エラーメッセージは本来はログに出力
 		return $result;
 	}
+}
+
+/*-----
+* ファイルデータを取得する関数を定義
+* 引数は不要
+* @return array $fileData
+*-----*/
+
+function getAllFile()
+{
+	$sql = "SELECT*FROM flood_damage_photo_table";
+	$fileData = dbc()->query($sql);
+	return $fileData;
+}
+
+// 特殊文字のエスケープ処理を行う関数
+// 参考 https://www.php.net/manual/ja/function.htmlspecialchars.php
+function h($s)
+{
+	return htmlspecialchars($s, ENT_QUOTES, "UTF-8");
 }

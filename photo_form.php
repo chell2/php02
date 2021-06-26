@@ -176,7 +176,7 @@
 						<input name="img" type="file" accept="image/*" />
 					</div>
 					<div>
-						<textarea name="caption" placeholder="キャプション（140文字以下）" id="caption"></textarea>
+						<textarea name="caption" placeholder="キャプション： 氏名・ほ場住所など（140文字以下）" id="caption"></textarea>
 					</div>
 					<button type="button" onclick="submit()">Upload</button>
 				</div>

@@ -1,7 +1,7 @@
 <?php
 
-// ini_set('display_errors', 1);
-// ini_set('error_reporting', E_ALL);
+ini_set('display_errors', 1);
+ini_set('error_reporting', E_ALL);
 
 require_once "./photo_dbc.php";  // photo_dbc.phpファイルを呼び出す
 
@@ -11,7 +11,7 @@ $filename = basename($file['name']);
 $tmp_path = $file['tmp_name'];
 $file_err = $file['error'];
 $filesize = $file['size'];
-$upload_dir = '/Applications/XAMPP/xamppfiles/htdocs/dev08/PHPkadai/php2/imgs/';
+$upload_dir = 'imgs/';
 $save_filename = date('YmdHis') . $filename;
 $err_msgs = array();  // エラーメッセージを配列に入れ、1つ以上あれば送信不可とする。
 $save_path = $upload_dir . $save_filename;
